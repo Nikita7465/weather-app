@@ -211,7 +211,7 @@ export default {
               ) {
                 this.weatherComponent = "RainWeather";
               } else if (
-                this.timestamp >= this.sunset + 3600 &&
+                this.timestamp >= this.sunset + 3600 ||
                 this.timestamp <= this.sunrise - 3600
               ) {
                 this.weatherComponent = "RainNightWeather";
@@ -224,7 +224,7 @@ export default {
               ) {
                 this.weatherComponent = "SnowWeather";
               } else if (
-                this.timestamp >= this.sunset + 3600 &&
+                this.timestamp >= this.sunset + 3600 ||
                 this.timestamp <= this.sunrise - 3600
               ) {
                 this.weatherComponent = "SnowNightWeather";
@@ -237,7 +237,7 @@ export default {
               ) {
                 this.weatherComponent = "FoggyWeather";
               } else if (
-                this.timestamp >= this.sunset + 3600 &&
+                this.timestamp >= this.sunset + 3600 ||
                 this.timestamp <= this.sunrise - 3600
               ) {
                 this.weatherComponent = "FoggyNightWeather";
@@ -250,7 +250,7 @@ export default {
               ) {
                 this.weatherComponent = "FoggyWeather";
               } else if (
-                this.timestamp >= this.sunset + 3600 &&
+                this.timestamp >= this.sunset + 3600 ||
                 this.timestamp <= this.sunrise - 3600
               ) {
                 this.weatherComponent = "FoggyNightWeather";
@@ -263,16 +263,16 @@ export default {
               ) {
                 this.weatherComponent = "FoggyWeather";
               } else if (
-                this.timestamp >= this.sunset + 3600 &&
+                this.timestamp >= this.sunset + 3600 ||
                 this.timestamp <= this.sunrise - 3600
               ) {
                 this.weatherComponent = "FoggyNightWeather";
               }
             },
           };
-          const conditionFunc = weatherConditions[this.weather];
-          if (conditionFunc) {
-            conditionFunc();
+          const condition = weatherConditions[this.weather];
+          if (condition) {
+            condition();
           }
         } else {
           this.alertMessage = "Город не найден";
