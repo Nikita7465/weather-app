@@ -7,7 +7,7 @@
         :class="{ 'input-not-empty-search-label': inputNotEmpty }"
         title="Найти город"
       >
-        <img src="/search.svg" alt="" class="search-icon" />
+        <img src="../public/search.svg" alt="" class="search-icon" />
         <input
           type="text"
           placeholder="Город"
